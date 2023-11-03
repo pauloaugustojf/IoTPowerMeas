@@ -18,8 +18,8 @@ ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768
         valueBox: {
           placement: 'center',
           text: '%v', //default
-          fontSize: 35,
-          rules: [{
+          fontSize: 50
+          /*rules: [{
               rule: '%v >= 700',
               text: '%v<br>EXCELLENT'
             },
@@ -35,17 +35,17 @@ ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768
               rule: '%v <  580',
               text: '%v<br>Bad'
             }
-          ]
+          ]*/
         }
       },
       tooltip: {
-        borderRadius: 5
+        borderRadius: 10
       },
       scaleR: {
         aperture: 180,
-        minValue: 300,
-        maxValue: 850,
-        step: 50,
+        minValue: 0,
+        maxValue: 1000,
+        step: 1,
         center: {
           visible: false
         },
@@ -85,11 +85,11 @@ ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768
         type: "feed",
         transport: "js",
         url: "feed()",
-        interval: 1500,
+        interval: 1000,
         resetTimeout: 1000
       },
       series: [{
-        values: [755], // starting value
+        values: [0], // starting value
         backgroundColor: 'black',
         indicator: [10, 10, 10, 10, 0.75],
         animation: {
