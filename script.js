@@ -17,7 +17,7 @@ ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768
         size: '100%',
         valueBox: {
           placement: 'center',
-          text: '%v', //default
+          text: '%v' + 'V', //default
           fontSize: 50
           /*rules: [{
               rule: '%v >= 700',
@@ -59,25 +59,17 @@ ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768
             offsetX: 15
           }]
         },
-        labels: ['300', '', '', '', '', '', '580', '640', '700', '750', '', '850'],
+        /*labels: ['0', '', '', '', '', '', '580', '640', '700', '750', '', '850'],*/
         ring: {
           size: 50,
           rules: [{
-              rule: '%v <= 580',
+              rule: '%v = 0',
               backgroundColor: '#E53935'
             },
             {
-              rule: '%v > 580 && %v < 640',
+              rule: '%v > 0',
               backgroundColor: '#EF5350'
-            },
-            {
-              rule: '%v >= 640 && %v < 700',
-              backgroundColor: '#FFA726'
-            },
-            {
-              rule: '%v >= 700',
-              backgroundColor: '#29B6F6'
-            }
+            }     
           ]
         }
       },
