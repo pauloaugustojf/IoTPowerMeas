@@ -94,7 +94,19 @@ ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768
     };
  
     zingchart.render({
-      id: 'myChart',
+      id: 'chartVoltage',
+      data: myConfig,
+      height: 500,
+      width: '100%'
+    });
+    zingchart.render({
+      id: 'chartCurrent',
+      data: myConfig,
+      height: 500,
+      width: '100%'
+    });
+    zingchart.render({
+      id: 'chartPower',
       data: myConfig,
       height: 500,
       width: '100%'
