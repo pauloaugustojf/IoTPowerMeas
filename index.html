@@ -13,12 +13,23 @@
     * {
        font-family: 'Kdam Thmor Pro',sans-serif;
     }
-
     h1 {
+      font-size: 30px;
+    }
+
+    header {
       display: flex;
       height: 200px;
       width: 100%;
       align-itens: center;
+      justify-content: center;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 500px;
+      width: 100vw;
     }
  
     #myChart {
@@ -34,8 +45,12 @@
 </head>
  
 <body>
-  <h1>IoT Power Measuring</h1>
-  <div id='myChart'><a class="zc-ref" href="https://www.zingchart.com/">Charts by ZingChart</a></div>
+  <header>
+    <h1>IoT Power Measuring</h1>
+  </header>
+  <main>
+    <div id='myChart'></div> 
+  </main>
   <script defer src='script.js'></script>
 </body>
  
