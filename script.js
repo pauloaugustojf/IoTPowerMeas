@@ -1,7 +1,7 @@
 ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
     window.feed = function(callback) {
       var tick = {};
-      tick.plot0 = 450; /*Math.ceil(350 + (Math.random() * 500));
+      tick.plot0 = '450'; /*Math.ceil(350 + (Math.random() * 500));
       callback(JSON.stringify(tick));*/
     };
  
