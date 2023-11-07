@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8">
   <title>Iot Power Meas</title>
- 
+  <script src="<https://unpkg.com/mqtt/dist/mqtt.min.js>"></script>
   <script nonce="undefined" src="https://cdn.zingchart.com/zingchart.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
@@ -51,8 +51,40 @@
     <div class='chart' id='chartVoltage'></div>
     <div class='chart' id='chartCurrent'></div>
     <div class='chart' id='chartPower'></div>
+    <p></p>
   </main>
   <script defer src='script.js'></script>
+  <script>
+    var txt = document.querySelector("p")
+    txt.innerText = txt.innerText + "   ok";
+    const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
+    const host = 'ws://c19a331e.ala.us-east-1.emqxsl.com:8084/mqtt'
+    const options = {
+      keepalive: 60,
+      clientId: clientId,
+      protocolId: 'MQTT',
+      protocolVersion: 4,
+      clean: true,
+      reconnectPeriod: 1000,
+      connectTimeout: 30 * 1000,
+      will: {
+        topic: 'WillMsg',
+        payload: 'Connection Closed abnormally..!',
+        qos: 0,
+        retain: false
+      },
+    }
+    allert('Connecting mqtt client')
+    const client = mqtt.connect(host, options)
+    client.on('error', (err) => {
+      allert('Connection error: ', err)
+      client.end()
+    })
+    client.on('reconnect', () => {
+      allert('Reconnecting...')
+    })
+    client.on('connect', () => { allert(`Client connected: ${clientId}`) /* Subscribe client.subscribe('testtopic', { qos: 0 }) */}) /*Unsubscribe client.unubscribe('testtopic', () => { allert('Unsubscribed'); })*/
+  </script>
 </body>
  
 </html>
