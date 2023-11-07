@@ -74,16 +74,16 @@
         retain: false
       },
     }
-    allert('Connecting mqtt client')
+    alert('Connecting mqtt client')
     const client = mqtt.connect(host, options)
     client.on('error', (err) => {
-      allert('Connection error: ', err)
+      alert('Connection error: ', err)
       client.end()
     })
     client.on('reconnect', () => {
-      allert('Reconnecting...')
+      alert('Reconnecting...')
     })
-    client.on('connect', () => { allert(`Client connected: ${clientId}`) /* Subscribe client.subscribe('testtopic', { qos: 0 }) */}) /*Unsubscribe client.unubscribe('testtopic', () => { allert('Unsubscribed'); })*/
+    client.on('connect', () => { alert(`Client connected: ${clientId}`) /* Subscribe client.subscribe('testtopic', { qos: 0 }) */}) /*Unsubscribe client.unubscribe('testtopic', () => { alert('Unsubscribed'); })*/
   </script>
 </body>
  
