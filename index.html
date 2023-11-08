@@ -52,7 +52,7 @@
   </main>
   <script defer src='script.js'></script>
   <script>
-    import mqtt from "<https://unpkg.com/mqtt/dist/mqtt.min.js>"
+    import * as mqtt from "https://unpkg.com/mqtt/dist/mqtt.min.js"
     var txt = document.querySelector("p")
     txt.innerText = mqtt;
     const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
