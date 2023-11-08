@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8">
   <title>Iot Power Meas</title>
-  <script type="module" src="<https://unpkg.com/mqtt/dist/mqtt.min.js>"></script>
+  <script src="<https://unpkg.com/mqtt/dist/mqtt.min.js>"></script>
   <script nonce="undefined" src="https://cdn.zingchart.com/zingchart.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
@@ -52,10 +52,10 @@
   </main>
   <script defer src='script.js'></script>
   <script>
-    /*import * as mqtt from "https://unpkg.com/mqtt/dist/mqtt.min.js"*/
+    import * as {mqtt} from 'https://unpkg.com/mqtt/dist/mqtt.min.js'
     var txt = document.querySelector("p")
     txt.innerText = mqtt;
-    /*const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
+    const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
     const host = 'ws://c19a331e.ala.us-east-1.emqxsl.com:8084/mqtt'
     const options = {
       keepalive: 60,
@@ -81,7 +81,7 @@
     client.on('reconnect', () => {
       alert('Reconnecting...')
     })
-    client.on('connect', () => { alert(`Client connected: ${clientId}`) Subscribe client.subscribe('testtopic', { qos: 0 }) }) Unsubscribe client.unubscribe('testtopic', () => { alert('Unsubscribed'); })*/
+    client.on('connect', () => { alert(`Client connected: ${clientId}`) Subscribe client.subscribe('testtopic', { qos: 0 }) }) /* Unsubscribe client.unubscribe('testtopic', () => { alert('Unsubscribed'); })*/
   </script>
 </body>
  
