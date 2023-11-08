@@ -56,7 +56,7 @@
   <script defer src='script.js'></script>
   <script>
    var mes = "-"
-   import * as mqtt from "https://cdn.zingchart.com/zingchart.min.js"
+   import mqtt from "https://cdn.zingchart.com/zingchart.min.js"
    const client = mqtt.connect("ws://c19a331e.ala.us-east-1.emqxsl.com:8084/mqtt")
 client.on("connect", () => {
   client.subscribe("presence", (err) => {
@@ -68,7 +68,7 @@ client.on("connect", () => {
 
 client.on("message", (topic, message) => {
   // message is Buffer
-  mes = message.toString();
+  mes = "message " + message.toString();
   client.end();
 }); 
     var txt = document.querySelector("p")
