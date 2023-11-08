@@ -48,32 +48,13 @@
     <h1>IoT Power Measuring</h1>
   </header>
   <main>
-    <div class='chart' id='chartVoltage'></div>
-    <div class='chart' id='chartCurrent'></div>
-    <div class='chart' id='chartPower'></div>
     <p></p>
   </main>
   <script defer src='script.js'></script>
   <script>
-   var mes = "-"
-   import mqtt from "https://cdn.zingchart.com/zingchart.min.js"
-   const client = mqtt.connect("ws://c19a331e.ala.us-east-1.emqxsl.com:8084/mqtt")
-client.on("connect", () => {
-  client.subscribe("presence", (err) => {
-    if (!err) {
-      client.publish("presence", "Hello mqtt");
-    }
-  });
-});
-
-client.on("message", (topic, message) => {
-  // message is Buffer
-  mes = "message " + message.toString();
-  client.end();
-}); 
     var txt = document.querySelector("p")
-    txt.innerText = txt.innerText + "   " + mes;
-    /*const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
+    txt.innerText = mqtt;
+    const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
     const host = 'ws://c19a331e.ala.us-east-1.emqxsl.com:8084/mqtt'
     const options = {
       keepalive: 60,
@@ -99,7 +80,7 @@ client.on("message", (topic, message) => {
     client.on('reconnect', () => {
       alert('Reconnecting...')
     })
-    client.on('connect', () => { alert(`Client connected: ${clientId}`) *//* Subscribe client.subscribe('testtopic', { qos: 0 }) */}) /*Unsubscribe client.unubscribe('testtopic', () => { alert('Unsubscribed'); })*/
+    client.on('connect', () => { alert(`Client connected: ${clientId}`) Subscribe client.subscribe('testtopic', { qos: 0 }) }) /*Unsubscribe client.unubscribe('testtopic', () => { alert('Unsubscribed'); })*/
   </script>
 </body>
  
