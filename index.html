@@ -50,11 +50,11 @@
     <p></p>
   </main>
   <script defer src='script.js'></script>
-  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.js"></script>
   <script defer >
     /*import * as mqtt from 'https://unpkg.com/mqtt/dist/mqtt.min.js'*/
     var txt = document.querySelector("p")
-    txt.innerText = mqtt.toString();
+    txt.innerText = (typof mqtt) + "  " + mqtt.toString();
     const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
     const host = 'ws://c19a331e.ala.us-east-1.emqxsl.com:8084/mqtt'
     const options = {
