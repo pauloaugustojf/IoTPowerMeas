@@ -50,7 +50,8 @@
     <p></p>
   </main>
   <script defer src='script.js'></script>
-  <script src="https://unpkg.com/mqtt/dist/mqtt.js"></script>
+  <script type="module" src="https://unpkg.com/mqtt/dist/mqtt.js"></script>
+  mqtt.connect()
   <script defer >
     /*import * as mqtt from 'https://unpkg.com/mqtt/dist/mqtt.min.js'*/
     var txt = document.querySelector("p")
