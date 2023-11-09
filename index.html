@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8">
   <title>Iot Power Meas</title>
-  <script src="<https://unpkg.com/mqtt/dist/mqtt.min.js>"></script>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
   <script nonce="undefined" src="https://cdn.zingchart.com/zingchart.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
@@ -52,7 +52,7 @@
   </main>
   <script defer src='script.js'></script>
   <script>
-    import * as mqtt from 'https://unpkg.com/mqtt/dist/mqtt.min.js'
+    /*import * as mqtt from 'https://unpkg.com/mqtt/dist/mqtt.min.js'*/
     var txt = document.querySelector("p")
     txt.innerText = mqtt.toString();
     const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
