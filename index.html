@@ -89,41 +89,11 @@
 </svg></a></span>
     </div>
   </main>
-  <script defer src='script.js'></script>
-  <script type="module" src="https://unpkg.com/mqtt/dist/mqtt.js"></script>
-  
-  <script defer >
-    mqtt.connect()
-    /*import * as mqtt from 'https://unpkg.com/mqtt/dist/mqtt.min.js'*/
-    var txt = document.querySelector("p")
-    txt.innerText = "teste "/* +(typof mqtt) + "  " + mqtt.toString();*/
-    const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
-    const host = 'ws://c19a331e.ala.us-east-1.emqxsl.com:8084/mqtt'
-    const options = {
-      keepalive: 60,
-      clientId: clientId,
-      protocolId: 'MQTT',
-      protocolVersion: 4,
-      clean: true,
-      reconnectPeriod: 1000,
-      connectTimeout: 30 * 1000,
-      will: {
-        topic: 'WillMsg',
-        payload: 'Connection Closed abnormally..!',
-        qos: 0,
-        retain: false
-      },
-    }
-    alert('Connecting mqtt client')
-    const client = mqtt.connect(host, options)
-    client.on('error', (err) => {
-      alert('Connection error: ', err)
-      client.end()
-    })
-    client.on('reconnect', () => {
-      alert('Reconnecting...')
-    })
-    client.on('connect', () => { alert(`Client connected: ${clientId}`) Subscribe client.subscribe('testtopic', { qos: 0 }) }) /* Unsubscribe client.unubscribe('testtopic', () => { alert('Unsubscribed'); })*/
+  <script type="module" defer src='/script.js'></script>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script type="module" defer >
+    
+    
   </script>
 </body>
  
