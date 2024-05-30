@@ -1,11 +1,9 @@
-//import * as mqtt from 'https://unpkg.com/mqtt/dist/mqtt.min.js'
-//console.log(mqtt)
-//let client = mqtt.connect("wss://v30a3511.ala.us-east-1.emqxsl.com:8084/mqtt");
-//console.log(client)
 var txt = document.querySelector("p")
 txt.innerText = '';
 const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
 const host = 'wss://v30a3511.ala.us-east-1.emqxsl.com:8084/mqtt'
+//const host = "wss://broker.emqx.io:8084"
+const topicsub = 'topictestepaulo'
 const options = {
   username: 'paulo',
   password: '1234',
@@ -34,7 +32,7 @@ txt.innerText = 'Reconnecting...'
 })
 client.on('connect', () => { txt.innerText = `Client connected: ${clientId}`
 //Subscribe 
-client.subscribe('testtopic', { qos: 0 }) }) /* Unsubscribe client.unubscribe('testtopic', () => { alert('Unsubscribed'); })*/
+client.subscribe(topicsub, { qos: 0 }) }) /* Unsubscribe client.unubscribe('testtopic', () => { alert('Unsubscribed'); })*/
 client.on("message", (topic, message) => {
   console.log(topic)
   // message is Buffer
