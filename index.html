@@ -12,26 +12,40 @@
     <section class="dash conection">
       <h2>Status de conexão</h2>
       <span class="brokerstatus">Broker MQTT Desconectado</span>
-      <span class="espstatus">ESP32 Desconectado</span>
+      <span class="espstatus">ESP-32 Desconectado</span>
     </section>
     <section class="dash realmeas">
       <h2>Medição em tempo real</h2>
       <div class="values">
         <div>
           <h3>Tensão:</h3>
+          <p class="voltage"></p>
         </div>
         <div>
           <h3>Corrente:</h3>
+          <p class="current"></p>
         </div>
         <div>
           <h3>FP:</h3>
+          <p>XXX</p>
         </div>
       </div>
     </section>
     <section class="dash realpower">
       <h2>Potência</h2>
-      <div>
-        <p class="current">XXXX</p>
+      <div class="values">
+        <div>
+          <h3>Aparente:</h3>
+          <p class="VA"></p>
+        </div>
+        <div>
+          <h3>Ativa:</h3>
+          <p class="P">XXX</p>
+        </div>
+        <div>
+          <h3>Reativa:</h3>
+          <p class="Q">XXX</p>
+        </div>
       </div>
     </section>
     <section class="dash graphpower">
@@ -42,7 +56,9 @@
     <section class="dash graphenergy">
       <h2>Energia</h2>
       <p class="current">XXXX</p>
-
+      <input class="topic" type="text">
+      <input class="message" type="text">
+      <input class="btn" type="button">
     </section>
   </main>
   

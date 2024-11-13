@@ -82,11 +82,11 @@ section h2 {
     line-height: 40px;
 }
 
-section.realmeas {
+section.realmeas, section.realpower {
     grid-column: 2/span 2;
 }
 
-.realmeas div.values{
+.dash div.values{
     height: 100%;
     width: 100%;
     display: grid;
@@ -95,8 +95,12 @@ section.realmeas {
     padding: 10px 0px 14px 0px;
 }
 
-.realmeas .values div{
-    background-color: #cfcfcf;
+.dash .values div{
+    background-color: #e0e0e0;
+}
+
+.values p{
+    font-size: 30px;
 }
 
 section.realpower {
